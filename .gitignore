@@ -11,3 +11,11 @@
 *.lai
 *.la
 *.a
+
+# vim undo files
+*.un~
+
+# waf files
+.lock*
+.waf*
+build

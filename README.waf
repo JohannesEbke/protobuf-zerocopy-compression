@@ -1,0 +1,2 @@
+The waf executable in this project is plain waf 1.7.9 generated with:
+./waf-light --tools=gccdeps,print_commands,why,local_rpath
