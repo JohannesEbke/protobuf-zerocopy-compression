@@ -12,13 +12,12 @@
 using google::protobuf::io::CodedInputStream;
 using google::protobuf::io::CodedOutputStream;
 
+#include "block_wrappers.h"
+
 #if HAVE_SNAPPY
 #include <snappy.h>
 #endif
-
 #include "lz4.h"
-
-#include "block_wrappers.h"
 
 namespace zerocc {
 
