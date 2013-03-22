@@ -14,7 +14,9 @@ using google::protobuf::io::CodedOutputStream;
 
 #include <compressed_stream.h>
 
+#ifdef HAVE_CONFIG_H
 #include <config.h>
+#endif
 
 namespace zerocc {
 
