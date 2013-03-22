@@ -11,6 +11,7 @@ def configure(conf):
     conf.load("compiler_c compiler_cxx waf_unit_test")
     conf.check_cfg(package="protobuf", uselib_store="protobuf", args="--libs --cflags", mandatory=True)
     conf.check_cxx(lib="snappy", uselib_store="snappy", mandatory=False, define_name="HAVE_SNAPPY")
+    conf.write_config_header('config.h')
 
 def build(bld):
     bld.load("compiler_c compiler_cxx waf_unit_test")

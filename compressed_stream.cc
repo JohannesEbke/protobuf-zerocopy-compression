@@ -1,6 +1,7 @@
 #include <compressed_stream.h>
 #include <gzip_stream.h>
 #include <block_wrappers.h>
+#include <config.h>
 
 namespace zerocc {
 

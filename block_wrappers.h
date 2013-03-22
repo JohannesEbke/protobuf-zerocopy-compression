@@ -14,6 +14,8 @@ using google::protobuf::io::CodedOutputStream;
 
 #include <compressed_stream.h>
 
+#include <config.h>
+
 namespace zerocc {
 
 // This class provides scaffolding for implementing compression streams based
@@ -83,6 +85,8 @@ class SnappyInputStream : public BlockCompressionInputStream {
   explicit SnappyInputStream(ZeroCopyInputStream* sub_stream) : BlockCompressionInputStream(sub_stream) {};
 
   virtual void RawUncompress(char* input_buffer, uint32_t compressed_size);
+  
+  GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(SnappyInputStream);
 };
 
 class SnappyOutputStream : public BlockCompressionOutputStream {
