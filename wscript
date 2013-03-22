@@ -1,5 +1,9 @@
 #! /usr/bin/env python
 
+def go(ctx):
+    from waflib.Options import commands, options
+    commands += ["configure", "build"]
+
 def options(opt):
     opt.load("compiler_c compiler_cxx waf_unit_test")
 
