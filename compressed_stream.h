@@ -27,7 +27,12 @@ typedef enum {
     LZ4
 } CompressionType;
 
-AbstractCompressedOutputStream * get_compressed_output_stream(google::protobuf::io::ZeroCopyOutputStream * ostream, CompressionType t, int level);
+/// Get a pointer to a compressed output stream given an underlying ZeroCopyOutputStream.
+/// Specify any of the above compression types, and a compression level (for use in ZLIB).
+AbstractCompressedOutputStream * get_compressed_output_stream(google::protobuf::io::ZeroCopyOutputStream * ostream, CompressionType t, int level=1);
+
+/// Get a pointer to a compressed input stream given an underlying ZeroCopyInputStream.
+/// Specify any of the above compression types.
 AbstractCompressedInputStream * get_compressed_input_stream(google::protobuf::io::ZeroCopyInputStream * istream, CompressionType t);
 
 }; // namespace zerocc
