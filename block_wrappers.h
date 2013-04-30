@@ -64,7 +64,7 @@ class BlockCompressionOutputStream : public AbstractCompressedOutputStream {
   int64_t ByteCount() const { return _byte_count; };
 
   bool Flush();
-  bool Close() {return true; }
+  bool Close() { return Flush(); }
 
  protected:
   virtual uint32_t MaxCompressedLength(size_t input_size) = 0;

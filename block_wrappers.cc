@@ -70,7 +70,7 @@ bool BlockCompressionInputStream::Next(const void** data, int* size) {
     RawUncompress(tempbuffer, compressed_size);
     delete[] tempbuffer;
     
-    reset_input_stream(); // TODO: probably call this only every Limit/BLOCKSIZE
+    if (_sub_stream->BytesUntilLimit() < 1024*1024) reset_input_stream(); // TODO: probably call this only every Limit/BLOCKSIZE
     
     (*size) = _output_buffer_size;
     (*data) = _output_buffer;
